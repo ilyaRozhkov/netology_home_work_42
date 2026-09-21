@@ -1,0 +1,9 @@
+FROM gcc:latest
+
+WORKDIR /app
+
+COPY HelloDockerCpp.cpp .
+
+RUN g++ -std=c++11 -pthread -o app HelloDockerCpp.cpp
+
+CMD ["./app", "5"]
