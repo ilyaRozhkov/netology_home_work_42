@@ -1,0 +1,9 @@
+FROM silkeh/clang:latest
+
+WORKDIR /app
+
+COPY HelloDockerCpp.cpp .
+
+RUN clang++ -std=c++11 -pthread -o app HelloDockerCpp.cpp
+
+CMD ["./app", "5"]
